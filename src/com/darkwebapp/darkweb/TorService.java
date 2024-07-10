@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * TorService.java
+ * src/com/darkwebapp/darkweb/TorService.java
  * Handles the configuration and starting of the Tor service.
  */
 public class TorService {
