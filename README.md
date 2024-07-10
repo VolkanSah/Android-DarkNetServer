@@ -1,15 +1,16 @@
 ```
-HiddenServiceApp/
+DarkWeb/
 ├── src/
-│   ├── com/example/hiddenserviceapp/
+│   ├── com/darkwebapp/darkweb/
 │   │   ├── MainActivity.java
 │   │   ├── TorService.java
 │   │   └── WebServer.java
 ├── assets/
-│   └── tor
+│   └── tor/
 └── res/
     └── layout/
         └── activity_main.xml
+
 
 ```
 
