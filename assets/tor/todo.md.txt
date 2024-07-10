@@ -1,0 +1,81 @@
+Schritt 1: Voraussetzungen installieren
+
+    Installiere das Android NDK:
+
+    bash
+
+sudo apt-get install android-ndk
+
+Installiere weitere notwendige Pakete:
+
+bash
+
+    sudo apt-get install build-essential automake libtool
+
+Schritt 2: Tor-Quellcode herunterladen
+
+    Lade den Tor-Quellcode herunter:
+
+    bash
+
+    git clone https://git.torproject.org/tor.git
+    cd tor
+
+Schritt 3: Kompilieren des Tor-Quellcodes für Android
+
+    Konfiguriere die Android NDK-Umgebung:
+
+    bash
+
+export NDK=/path/to/android-ndk
+export PATH=$NDK/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
+
+Setze die Umgebungsvariablen für die Android-Architektur (z.B. für arm64-v8a):
+
+bash
+
+export TARGET=armv8a-linux-androideabi
+export SYSROOT=$NDK/platforms/android-21/arch-arm64
+export CC=$TARGET-clang
+export CXX=$TARGET-clang++
+
+Kompiliere OpenSSL:
+
+bash
+
+cd /path/to/openssl
+./Configure android-arm64 -D__ANDROID_API__=21 --prefix=$SYSROOT/usr
+make && make install
+
+Kompiliere Tor:
+
+bash
+
+    cd /path/to/tor
+    ./autogen.sh
+    ./configure --host=$TARGET --with-openssl-dir=$SYSROOT/usr
+    make
+
+Schritt 4: Ergebnis in das Projekt integrieren
+
+    Nach erfolgreicher Kompilierung findest du die .so-Dateien im entsprechenden Build-Verzeichnis.
+    Kopiere die .so-Dateien in dein Projektverzeichnis:
+
+    markdown
+
+    DarkWeb/
+    └── assets/
+        └── tor/
+            ├── arm64-v8a/
+            │   └── libtor.so
+            ├── armeabi-v7a/
+            │   └── libtor.so
+            ├── x86/
+            │   └── libtor.so
+            └── x86_64/
+                └── libtor.so
+
+Schritt 5: Projekt kompilieren und testen
+
+    Kompiliere dein Android-Projekt in Android Studio.
+    Teste die APK auf deinem Android-Gerät.
