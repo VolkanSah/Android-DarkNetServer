@@ -1,3 +1,19 @@
+```
+HiddenServiceApp/
+├── src/
+│   ├── com/example/hiddenserviceapp/
+│   │   ├── MainActivity.java
+│   │   ├── TorService.java
+│   │   └── WebServer.java
+├── assets/
+│   └── tor
+└── res/
+    └── layout/
+        └── activity_main.xml
+
+```
+
+
 Funktionen der Android APK
 
     Tor-Integration
