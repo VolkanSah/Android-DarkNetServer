@@ -4,7 +4,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 /**
- * MainActivity.java
+ * src/com/darkwebapp/darkweb/MainActivity.java
  * The main entry point for the DarkWeb application.
  * Handles the UI and starts the Tor service and web server.
  */
