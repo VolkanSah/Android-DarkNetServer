@@ -109,10 +109,4 @@ Schritt 5: Dateiverwaltung
         Implementiere eine Methode zum Erstellen der erforderlichen Verzeichnisse und Dateien.
         Stelle sicher, dass die Verzeichnisse und Dateien korrekt verwaltet werden.
 
-Nächste Schritte
 
-a. Beginnen wir mit dem Einrichten des Projekts und der Struktur in Android Studio.
-
-b. Fügen wir die Tor-Binary und die Webserver-Bibliothek hinzu.
-
-Möchtest du mit dem Einrichten des Projekts beginnen?
