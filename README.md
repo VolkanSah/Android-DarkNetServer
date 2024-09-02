@@ -1,3 +1,10 @@
+
+# Android DarkNet Server (Boilerplate)
+
+## Overview
+The Android DarkNet Server project is an Android application designed to integrate Tor and a simple web server, enabling the device to host a hidden service accessible through the Tor network. This project is still under development, with several features planned in the roadmap.
+
+### Project Structure
 ```
 DarkWeb/
 ├── src/
@@ -10,103 +17,86 @@ DarkWeb/
 └── res/
     └── layout/
         └── activity_main.xml
-
-
 ```
 
+### Features of the Android APK
 
-Funktionen der Android APK
+- **Tor Integration**
+  - Start the Tor service.
+  - Configure Tor for the hidden service.
+  - Monitor the Tor status.
 
-    Tor-Integration
-        Starten des Tor-Dienstes.
-        Konfigurieren von Tor für den Hidden Service.
-        Überwachen des Tor-Status.
+- **Web Server Integration**
+  - Start a simple web server using NanoHTTPD.
+  - Serve content via the web server.
 
-    Webserver-Integration
-        Starten eines einfachen Webservers.
-        Bereitstellen von Inhalten über den Webserver.
+- **User Interface**
+  - Start and stop Tor and the web server via the UI.
+  - Display the status of Tor and the web server.
+  - Show the .onion address of the hidden service.
 
-    Benutzeroberfläche
-        Starten und Stoppen von Tor und Webserver über die UI.
-        Anzeigen des Status von Tor und Webserver.
-        Anzeigen der .onion-Adresse des Hidden Services.
+### Installation
 
-    Dateiverwaltung
-        Erstellen und Verwalten der erforderlichen Verzeichnisse und Dateien (z.B. torrc, Hidden Service-Verzeichnis).
+#### Prerequisites
+Before you begin, ensure you have met the following requirements:
+- Android Studio installed.
+- Android NDK (Native Development Kit) installed.
 
-Pseudocode und Detaillierte Planung
-1. Tor-Integration
+#### Steps
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/Android-DarkNetServer.git
+   ```
+2. **Import the project into Android Studio:**
+   Open Android Studio and select "Open an existing Android Studio project". Navigate to the directory where you cloned the repository and open it.
 
-    Tor-Binary einbinden: Die Tor-Binary in die App einbinden.
-    Konfigurationsdateien erstellen: torrc-Datei und Hidden Service-Verzeichnis erstellen.
-    Tor starten: Eine Methode, um den Tor-Dienst zu starten.
-    Tor überwachen: Überwachen des Tor-Status und Anzeigen in der UI.
+3. **Set up the environment:**
+   - Install the Android NDK:
+     ```bash
+     sudo apt-get install android-ndk
+     ```
+   - Install other necessary packages:
+     ```bash
+     sudo apt-get install build-essential automake libtool
+     ```
+   - Configure the Android NDK environment variables as per the instructions in `assets/tor/todo.md.txt`.
 
-2. Webserver-Integration
+4. **Compile the Tor source code for Android:**
+   - Follow the instructions in `assets/tor/todo.md.txt` to compile the Tor binaries for Android.
 
-    Webserver einbinden: Einfache Webserver-Bibliothek (z.B. NanoHTTPD) einbinden.
-    Webserver starten: Eine Methode, um den Webserver zu starten.
-    Inhalte bereitstellen: Inhalte über den Webserver bereitstellen.
+5. **Build and run the app:**
+   Compile your Android project in Android Studio and test the APK on your Android device.
 
-3. Benutzeroberfläche
+### Roadmap
 
-    UI-Elemente erstellen: Schaltflächen zum Starten und Stoppen von Tor und Webserver.
-    Statusanzeigen: Anzeigen des Status von Tor und Webserver.
-    Onion-Adresse anzeigen: Anzeigen der .onion-Adresse des Hidden Services.
+The following features are planned and partially implemented:
+1. **Complete Tor Integration**:
+   - Improve the monitoring and error-handling of the Tor service.
+   - Provide more detailed status updates in the UI.
 
-4. Dateiverwaltung
+2. **Enhanced Web Server Features**:
+   - Serve dynamic content.
+   - Implement more robust routing and content handling.
 
-    Verzeichnisse erstellen: Erforderliche Verzeichnisse und Dateien erstellen und verwalten.
+3. **Security Enhancements**:
+   - Integrate HTTPS support for the web server.
+   - Add more configuration options for the Tor service.
 
-Detaillierte Planung der Implementierung
-Schritt 1: Projektstruktur erstellen
+4. **User Interface Improvements**:
+   - Implement a more intuitive and user-friendly design.
+   - Add more customization options for users.
 
-    Erstelle ein neues Projekt in Android Studio.
-    Füge die erforderlichen Abhängigkeiten für Tor und den Webserver hinzu.
+5. **Documentation**:
+   - Improve in-line code documentation.
+   - Create tutorials and more detailed user guides.
 
-Schritt 2: Tor-Integration
+### Contributions
 
-    Tor-Binary einbinden
-        Füge die Tor-Binary in das Projekt ein.
-        Stelle sicher, dass die Tor-Binary ausführbar ist.
+Feel free to fork this repository and contribute to its development! If you have suggestions for new features or improvements, please submit a pull request.
 
-    Konfigurationsdateien erstellen
-        Erstelle eine torrc-Datei mit den erforderlichen Einstellungen.
-        Erstelle das Hidden Service-Verzeichnis.
+### License
+This project is licensed under the MIT License.
 
-    Tor starten
-        Implementiere eine Methode zum Starten des Tor-Dienstes.
-        Verwende ProcessBuilder, um Tor mit der torrc-Datei zu starten.
+---
 
-    Tor überwachen
-        Implementiere eine Methode zum Überwachen des Tor-Status.
-        Aktualisiere die UI entsprechend dem Status.
-
-Schritt 3: Webserver-Integration
-
-    Webserver einbinden
-        Füge eine einfache Webserver-Bibliothek (z.B. NanoHTTPD) in das Projekt ein.
-
-    Webserver starten
-        Implementiere eine Methode zum Starten des Webservers.
-        Stelle Inhalte über den Webserver bereit.
-
-Schritt 4: Benutzeroberfläche
-
-    UI-Elemente erstellen
-        Erstelle Schaltflächen zum Starten und Stoppen von Tor und Webserver.
-        Füge Textansichten hinzu, um den Status anzuzeigen.
-
-    Statusanzeigen
-        Implementiere eine Methode zum Aktualisieren der UI basierend auf dem Status von Tor und Webserver.
-
-    Onion-Adresse anzeigen
-        Implementiere eine Methode zum Anzeigen der .onion-Adresse des Hidden Services.
-
-Schritt 5: Dateiverwaltung
-
-    Verzeichnisse erstellen
-        Implementiere eine Methode zum Erstellen der erforderlichen Verzeichnisse und Dateien.
-        Stelle sicher, dass die Verzeichnisse und Dateien korrekt verwaltet werden.
-
-
+This project was initiated to explore the possibilities of hosting hidden services on Android devices. It's an ongoing effort with more features and improvements planned for the future.
