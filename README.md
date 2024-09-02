@@ -4,7 +4,7 @@
 ## Overview
 The Android DarkNet Server project is an Android application designed to integrate Tor and a simple web server, enabling the device to host a hidden service accessible through the Tor network. This project serves as a boilerplate intended for developers who need a basic framework to quickly set up a hidden service on Android. It is not intended for production use and is solely for developers looking to build upon this foundation for their own projects.
 
-Before you can actually use it, you'll need to compile the latest Tor packages yourself—just to keep things interesting! 😉 After all, we want to make sure you're using the most up-to-date .so files. So, roll up your sleeves and get compiling. Remember, we don’t make it too easy for you—after all, this is for developers only!
+Before you can actually use it, you'll need to compile the latest Tor packages yourself—just to keep things interesting! 😉 After all, we want to make sure you're using the most up-to-date .so files. So, roll up your sleeves and get compiling. Remember, we don’t make it too easy for you—after all, this is for developers only, and not for criminals and script kiddies!
 
 ### Project Structure
 ```
@@ -61,10 +61,10 @@ Before you begin, ensure you have met the following requirements:
      ```bash
      sudo apt-get install build-essential automake libtool
      ```
-   - Configure the Android NDK environment variables as per the instructions in `todo.md`.
+   - Configure the Android NDK environment variables as per the instructions in [`todo.md`](todo.md).
 
 4. **Compile the Tor source code for Android:**
-   - Follow the instructions in `todo.md` to compile the Tor binaries for Android.
+   - Follow the instructions in [`todo.md`](todo.md) to compile the Tor binaries for Android.
 
 5. **Build and run the app:**
    Compile your Android project in Android Studio and test the APK on your Android device.
