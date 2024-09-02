@@ -61,10 +61,10 @@ Before you begin, ensure you have met the following requirements:
      ```bash
      sudo apt-get install build-essential automake libtool
      ```
-   - Configure the Android NDK environment variables as per the instructions in [`todo.md`](todo.md).
+   - Configure the Android NDK environment variables as per the instructions in [`todo.md`](assets/tor/todo.md).
 
 4. **Compile the Tor source code for Android:**
-   - Follow the instructions in [`todo.md`](todo.md) to compile the Tor binaries for Android.
+   - Follow the instructions in [`todo.md`](assets/tor/todo.md) to compile the Tor binaries for Android.
 
 5. **Build and run the app:**
    Compile your Android project in Android Studio and test the APK on your Android device.
