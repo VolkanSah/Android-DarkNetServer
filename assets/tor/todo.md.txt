@@ -1,81 +1,83 @@
-Schritt 1: Voraussetzungen installieren
 
-    Installiere das Android NDK:
+# To-Do List for Android DarkNet Server Project
 
-    bash
+## Table of Contents
+1. [Install Prerequisites](#install-prerequisites)
+2. [Download Tor Source Code](#download-tor-source-code)
+3. [Compile Tor Source Code for Android](#compile-tor-source-code-for-android)
+4. [Integrate Compiled Code into the Project](#integrate-compiled-code-into-the-project)
+5. [Compile and Test the Project](#compile-and-test-the-project)
 
+## 1. Install Prerequisites
+
+Install the Android NDK:
+```bash
 sudo apt-get install android-ndk
+```
 
-Installiere weitere notwendige Pakete:
+Install other necessary packages:
+```bash
+sudo apt-get install build-essential automake libtool
+```
 
-bash
+## 2. Download Tor Source Code
 
-    sudo apt-get install build-essential automake libtool
+Download the Tor source code:
+```bash
+git clone https://git.torproject.org/tor.git
+cd tor
+```
 
-Schritt 2: Tor-Quellcode herunterladen
+## 3. Compile Tor Source Code for Android
 
-    Lade den Tor-Quellcode herunter:
-
-    bash
-
-    git clone https://git.torproject.org/tor.git
-    cd tor
-
-Schritt 3: Kompilieren des Tor-Quellcodes für Android
-
-    Konfiguriere die Android NDK-Umgebung:
-
-    bash
-
+Configure the Android NDK environment:
+```bash
 export NDK=/path/to/android-ndk
 export PATH=$NDK/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
+```
 
-Setze die Umgebungsvariablen für die Android-Architektur (z.B. für arm64-v8a):
-
-bash
-
+Set environment variables for the Android architecture (e.g., for arm64-v8a):
+```bash
 export TARGET=armv8a-linux-androideabi
 export SYSROOT=$NDK/platforms/android-21/arch-arm64
 export CC=$TARGET-clang
 export CXX=$TARGET-clang++
+```
 
-Kompiliere OpenSSL:
-
-bash
-
+Compile OpenSSL:
+```bash
 cd /path/to/openssl
 ./Configure android-arm64 -D__ANDROID_API__=21 --prefix=$SYSROOT/usr
 make && make install
+```
 
-Kompiliere Tor:
+Compile Tor:
+```bash
+cd /path/to/tor
+./autogen.sh
+./configure --host=$TARGET --with-openssl-dir=$SYSROOT/usr
+make
+```
 
-bash
+## 4. Integrate Compiled Code into the Project
 
-    cd /path/to/tor
-    ./autogen.sh
-    ./configure --host=$TARGET --with-openssl-dir=$SYSROOT/usr
-    make
+After successfully compiling, you will find the .so files in the respective build directory.
+Copy the .so files into your project directory:
+```markdown
+DarkWeb/
+└── assets/
+    └── tor/
+        ├── arm64-v8a/
+        │   └── libtor.so
+        ├── armeabi-v7a/
+        │   └── libtor.so
+        ├── x86/
+        │   └── libtor.so
+        └── x86_64/
+            └── libtor.so
+```
 
-Schritt 4: Ergebnis in das Projekt integrieren
+## 5. Compile and Test the Project
 
-    Nach erfolgreicher Kompilierung findest du die .so-Dateien im entsprechenden Build-Verzeichnis.
-    Kopiere die .so-Dateien in dein Projektverzeichnis:
-
-    markdown
-
-    DarkWeb/
-    └── assets/
-        └── tor/
-            ├── arm64-v8a/
-            │   └── libtor.so
-            ├── armeabi-v7a/
-            │   └── libtor.so
-            ├── x86/
-            │   └── libtor.so
-            └── x86_64/
-                └── libtor.so
-
-Schritt 5: Projekt kompilieren und testen
-
-    Kompiliere dein Android-Projekt in Android Studio.
-    Teste die APK auf deinem Android-Gerät.
+Compile your Android project in Android Studio.
+Test the APK on your Android device.
