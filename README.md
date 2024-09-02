@@ -2,7 +2,7 @@
 # Android DarkNet Server (Boilerplate)
 
 ## Overview
-The Android DarkNet Server project is an Android application designed to integrate Tor and a simple web server, enabling the device to host a hidden service accessible through the Tor network. This project is still under development, with several features planned in the roadmap.
+The Android DarkNet Server project is an Android application designed to integrate Tor and a simple web server, enabling the device to host a hidden service accessible through the Tor network. This project is a boilerplate intended for developers who want to quickly set up a hidden service on Android. It is still under development, with several features planned in the roadmap.
 
 ### Project Structure
 ```
@@ -59,36 +59,18 @@ Before you begin, ensure you have met the following requirements:
      ```bash
      sudo apt-get install build-essential automake libtool
      ```
-   - Configure the Android NDK environment variables as per the instructions in `assets/tor/todo.md.txt`.
+   - Configure the Android NDK environment variables as per the instructions in `todo.md`.
 
 4. **Compile the Tor source code for Android:**
-   - Follow the instructions in `assets/tor/todo.md.txt` to compile the Tor binaries for Android.
+   - Follow the instructions in `todo.md` to compile the Tor binaries for Android.
 
 5. **Build and run the app:**
    Compile your Android project in Android Studio and test the APK on your Android device.
 
-### Roadmap
+### For What is This Boilerplate?
+This boilerplate is designed to help developers quickly create hidden servers for pentesting tools or other hidden services. With this boilerplate, you can host advanced hidden services using servers like NanoHTTPD or other alternatives.
 
-The following features are planned and partially implemented:
-1. **Complete Tor Integration**:
-   - Improve the monitoring and error-handling of the Tor service.
-   - Provide more detailed status updates in the UI.
-
-2. **Enhanced Web Server Features**:
-   - Serve dynamic content.
-   - Implement more robust routing and content handling.
-
-3. **Security Enhancements**:
-   - Integrate HTTPS support for the web server.
-   - Add more configuration options for the Tor service.
-
-4. **User Interface Improvements**:
-   - Implement a more intuitive and user-friendly design.
-   - Add more customization options for users.
-
-5. **Documentation**:
-   - Improve in-line code documentation.
-   - Create tutorials and more detailed user guides.
+**Important:** This boilerplate is intended for educational and development purposes only. Misuse of this tool for illegal activities is strictly prohibited. Developers should ensure they comply with all local laws and regulations when using this tool.
 
 ### Contributions
 
