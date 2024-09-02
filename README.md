@@ -2,7 +2,9 @@
 # Android DarkNet Server (Boilerplate)
 
 ## Overview
-The Android DarkNet Server project is an Android application designed to integrate Tor and a simple web server, enabling the device to host a hidden service accessible through the Tor network. This project is a boilerplate intended for developers who want to quickly set up a hidden service on Android. It is not for production use!Only for developers who needs an basic boilerplatte for ther ideas. It will be not explainet here to avoid criminals for creating iligal sites.
+The Android DarkNet Server project is an Android application designed to integrate Tor and a simple web server, enabling the device to host a hidden service accessible through the Tor network. This project serves as a boilerplate intended for developers who need a basic framework to quickly set up a hidden service on Android. It is not intended for production use and is solely for developers looking to build upon this foundation for their own projects.
+
+Before you can actually use it, you'll need to compile the latest Tor packages yourself—just to keep things interesting! 😉 After all, we want to make sure you're using the most up-to-date .so files. So, roll up your sleeves and get compiling. Remember, we don’t make it too easy for you—after all, this is for developers only!
 
 ### Project Structure
 ```
